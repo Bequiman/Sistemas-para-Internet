@@ -1,9 +1,7 @@
 package funcionario;
 
-
-import static org.junit.jupiter.api.Assertions.assertEquals;
+import org.junit.Test;
 import org.junit.jupiter.api.Assertions;
-import org.junit.jupiter.api.Test;
 
 public class FuncionarioTeste {
     private Funcionario funcionario;
@@ -40,13 +38,11 @@ public class FuncionarioTeste {
         funcionario = new Funcionario("Fulano",40,132);
         Assertions.assertThrows(IllegalArgumentException.class,()-> funcionario.setHorasTrabalhadas(50));
     }
-
     @Test
     public void testarModificarValorPagamentoInvalido() {
         funcionario = new Funcionario("Fulano",40,132);
         Assertions.assertThrows(IllegalArgumentException.class,()-> funcionario.setValorHora(50));
     }
-
     @Test
     public void testarModificarValorEntradaInvalida() {
         funcionario = new Funcionario("Fulano",40,132);
@@ -55,8 +51,9 @@ public class FuncionarioTeste {
 
     @Test
     public void testarModificarValorEntradaValida()  {
-        funcionario = new Funcionario("Fulano",40,60);
+        funcionario = new Funcionario("Fulano",40,135);
         Assertions.assertThrows(IllegalArgumentException.class,()-> funcionario.setValorHora(132));
     }
+
 
 }
